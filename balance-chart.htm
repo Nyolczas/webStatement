@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>balance-chart</title>
+<link rel="stylesheet" href="css/minta.css">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+
+['Dátum', 'Balance', 'Equity']
+,
+ [' 2018.02.07 ',  500 ,  500 ]
+,
+ [' 2018.02.08 ',  490.37 ,  490.37 ]
+,
+ [' 2018.02.09 ',  499.18 ,  499.18 ]
+,
+ [' 2018.02.13 ',  500.82 ,  500.82 ]
+,
+ [' 2018.02.15 ',  502.15 ,  502.15 ]
+,
+ [' 2018.02.16 ',  512.22 ,  512.22 ]
+
+]);
+var options = {
+title: 'Admiral Markets Robot Portfólió',
+hAxis: {title: 'Dátum',  titleTextStyle: {color: '#333'}},
+};
+var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+chart.draw(data, options);
+}
+</script>
+</head>
+<body>
+ <div id="chart_div" style="width: 100%; height: 500px;"></div> </body>
+</html>

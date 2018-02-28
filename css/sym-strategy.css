@@ -1,0 +1,230 @@
+
+
+/* ================================ symbol ================================ */
+
+/* ================ nav ================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 25% 10% 10% 10% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+    grid-template-rows: 100px;
+    width: 1800px;
+    background-color: var(--nav-bg-color);
+    font-family: 'Raleway', sans-serif;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+}
+
+.symbol-main {
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--nav-bg-color);
+    font-size: 6.5rem;
+    font-weight: 900;
+    grid-row: 1 / span 2;
+    line-height: 5.8rem;
+}
+
+/* ================ /nav ================ */
+
+/* ================ strats - strats chart ================ */
+
+.chart-wrapper {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 600px;
+    width: 100%;
+    margin: 120px 0 20px 0;
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 6px;
+    padding-right: 5px;
+    background-color: white;
+    overflow: hidden;
+}
+
+#strats-wrapper {
+    margin-top: 0;
+}
+
+.maestro{
+    grid-column: 1 / 3;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 100;
+    font-style: italic;
+    padding: 0;
+    margin: 0; 
+    margin-bottom: -50px; 
+    overflow: hidden;
+    line-height: 70px;
+    height: 80px;
+}
+
+#Sym-hozam_chart {
+    height: 500px;
+}
+
+#Sym-lots_chart {
+    height: 100px;
+}
+
+.maestro-charts {
+    border-left: 1px solid rgb(129, 129, 129);
+}
+
+#Strats_chart {
+    height: 100%;
+}
+
+/* ================ /strats - strats chart ================ */
+
+/* ================================ /symbol ================================ */
+
+/* ================================ sym-strategy ================================ */
+
+/* ================ nav ================ */
+
+.sym-navbar {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 15% 15% 20% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+    width: 1800px;
+    background-color: var(--nav-bg-color);
+    font-family: 'Raleway', sans-serif;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+}
+
+.sym-navitem {
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.sym-navlink {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.sym-navlink:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 20px rgb(0, 25, 50);
+}
+
+.symbol {
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+.symbol:hover {
+    text-shadow: 0 0 20px rgb(0, 25, 50);
+}
+
+.strategy {
+    font-size: 2.8rem;
+    font-weight: 900;
+}
+
+/* ================ /nav ================ */
+
+/* ================ chart box ================ */
+
+.charts-container {
+    display: grid;
+    grid-template-columns: 15% 25% 60%;
+    width: 100%;
+    margin: 100px 0 20px 0;
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 6px;
+    padding-right: 5px;
+    background-color: white;
+    overflow: hidden;
+    margin-right: 5px;
+}
+
+.stat-wrapper {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    /* align-items: center; */
+}
+
+.stat-kat,
+.stat-val {
+    background-color: white;
+    border-top: 1px solid rgb(129, 129, 129);
+    border-bottom: 1px solid rgb(129, 129, 129);
+    margin: -1px;
+}
+
+.stat-kat {
+    text-align: right;
+    font-style: italic;
+    padding: 21px 10px;
+}
+
+.stat-val {
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 18px 5px;
+}
+
+#Hozam_chart {
+    height: 500px;
+}
+
+#Lots_chart {
+    height: 100px;
+}
+
+.side-charts {
+    border-left: 1px solid rgb(129, 129, 129);
+}
+
+/* ================ /chart box ================ */
+
+/* ================ táblázat ================ */
+
+.symstrat-tabla {
+    background-color: white;
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.symstrat-tabla-sor {
+    display: grid;
+    grid-template-columns: 5% 35% 15% 5% 10% 10% 20%;
+    width: 100%;
+    border-top: 1px solid rgb(129, 129, 129);
+    padding: 5px;
+}
+
+.symstrat-tabla-sor:hover {
+    background-color: rgb(225, 255, 254);
+}
+
+.tabla-head {
+    display: grid;
+    grid-template-columns: 5% 35% 15% 5% 10% 10% 20%;
+    width: 100%;
+    border-top: 0px;
+    font-style: italic;
+    background-color: var(--nav-bg-color);
+    color: rgba(255, 255, 255, 0.75);
+    padding: 5px;
+}
+
+.symstat-tabla-oszlop {
+    text-align: center;
+}
+
+/* ================ /táblázat ================ */
+
+/* ================================ /sym-strategy ================================ */
