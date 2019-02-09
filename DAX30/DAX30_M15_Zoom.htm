@@ -23,16 +23,242 @@ google.charts.setOnLoadCallback(drawHoursChart);
 google.charts.setOnLoadCallback(drawScatterChart);
 
 // ================================ /Load charts ================================
-      </script>
+ // ================================ Hozam chart ================================
+function drawHozamChart() {
+var data = google.visualization.arrayToDataTable([
+['Dátum', 'Hozam', 'Longs', 'Shorts'],
+['', 0, 0, 0]
+
+]);
+
+var options = {
+seriesType: 'bars',
+series: {
+1: {
+type: 'line'
+},
+2: {
+type: 'line'
+}
+},
+colors: ['#878787', '#0050b8', '#b80000'],
+dataOpacity: 0.5,
+bar: {groupWidth: "100%"},legend: {
+position: 'none'
+},
+chartArea: {
+left: 40,
+right: 40,
+bottom: 20,
+top: 20,
+width: "100%",
+height: "100%"
+}
+};
+
+var chart = new google.visualization.ComboChart(document.getElementById('Hozam_chart'));
+chart.draw(data, options);
+}
+// ================================ /Hozam chart ================================
+ // ================================ Lots chart ================================
+function drawLotsChart() {
+var data = google.visualization.arrayToDataTable([
+['date', 'lots'],
+['', 0]
+,
+]);
+
+var options = {
+seriesType: 'bars',
+colors: ['#008000'],
+legend: {
+position: 'none'
+},
+chartArea: {
+left: 40,
+right: 40,
+bottom: 28,
+top: 10,
+width: "100%",
+height: "100%"
+}
+};
+
+var chart = new google.visualization.ComboChart(document.getElementById('Lots_chart'));
+chart.draw(data, options);
+}
+// ================================ /Lots chart ================================
+ // ================================ Days chart ================================
+function drawDaysChart() {
+var data = google.visualization.arrayToDataTable([
+['nap', 'profit'],['hétfő', 0.00],
+['kedd', 0.00],
+['szerda', 0.00],
+['csütörtök', 0.00],
+['péntek', 0.00],
+]);
+
+var options = {
+seriesType: 'bars',
+colors: ['#008000'],
+legend: {
+position: 'none'
+},
+chartArea: {
+left: 40,
+right: 20,
+bottom: 20,
+top: 20,
+width: "100%",
+height: "100%"
+}
+};
+
+var chart = new google.visualization.ComboChart(document.getElementById('days-chart'));
+chart.draw(data, options);
+}
+// ================================ /Days chart ================================
+ // ================================ Hours chart ================================
+function drawHoursChart() {
+var data = google.visualization.arrayToDataTable([
+['óra', 'profit'],
+['0', 0],
+['1', 0.00],
+['2', 0.00],
+['3', 0.00],
+['4', 0.00],
+['5', 0.00],
+['6', 0.00],
+['7', 0.00],
+['8', 0.00],
+['9', 0.00],
+['10', 0.00],
+['11', 0.00],
+['12', 0.00],
+['13', 0.00],
+['14', 0.00],
+['15', 0.00],
+['16', 0.00],
+['17', 0.00],
+['18', 0.00],
+['19', 0.00],
+['20', 0.00],
+['21', 0.00],
+['22', 0.00],
+['23', 0.00],
+]);
+
+var options = {
+seriesType: 'bars',
+colors: ['#008000'],
+legend: {
+position: 'none'
+},
+chartArea: {
+left: 40,
+right: 20,
+bottom: 20,
+top: 20,
+width: "100%",
+height: "100%"
+}
+};
+
+var chart = new google.visualization.ComboChart(document.getElementById('hours-chart'));
+chart.draw(data, options);
+}
+// ================================ /Hours chart ================================
+
+ // ================================ Scatter chart ================================
+function drawScatterChart() {
+var data = google.visualization.arrayToDataTable([
+['age', 'profit'],
+]);
+
+var options = {
+colors: ['#008000'],
+legend: {
+position: 'none'
+},
+chartArea: {
+left: 40,
+right: 20,
+bottom: 40,
+top: 20,
+width: "100%",
+height: "100%"
+}
+};
+
+var chart = new google.visualization.ScatterChart(document.getElementById('scatter-chart'));
+
+chart.draw(data, options);
+}
+// ================================ /Scatter chart ================================
+ </script>
 </head>
 
 <body>
 
  <div class="symstrat-container">
-<div class="sym-navbar">
-<a class="sym-navitem sym-navlink symbol" class="1" href=" dax30.html">dax30</a>
-<a class="sym-navitem sym-navlink strategy" class="Zoom" href="#">15 Zoom</a>
-<a class="sym-navitem sym-navlink" href="../Mastrlist.html">Mesterlista</a>
+<div class="sym-navbar" style="background-color: #878787">
+<a class="sym-navitem symbol DAX30" href="DAX30.htm">DAX30</a>
+<a class="sym-navitem strategy Zoom" href="#">M15 Zoom</a>
+<a class="sym-navitem sym-navlink" href="../instruments.htm">Instrumentumok</a>
+<div class="sym-navitem"></div>
+<div class="sym-navitem"></div>
+<a class="sym-navitem sym-navlink" href="DAX30_H1_Batman.htm">H1_Batman</a>
+<a class="sym-navitem sym-navlink" href="DAX30_H1_Classic.htm">H1_Classic</a>
+<a class="sym-navitem sym-navlink" href="DAX30_H1_ADX.htm">H1_ADX</a>
+<a class="sym-navitem sym-navlink" href="DAX30_M15_St4.htm">M15_St4</a>
+<a class="sym-navitem sym-navlink" href="DAX30_M15_Zoom.htm">M15_Zoom</a>
+<a class="sym-navitem sym-navlink" href="DAX30_M15_TSQ.htm">M15_TSQ</a>
+<a class="sym-navitem sym-navlink" href="DAX30_M5_ADX.htm">M5_ADX</a>
+<div class="sym-navitem"></div>
+</div>
+<div class="charts-container">
+<div class="stat-wrapper">
+<div class="stat-kat">Kor:</div>
+<div class="stat-val">0 nap</div>
+<div class="stat-kat">Trades:</div>
+<div class="stat-val"> db</div>
+<div class="stat-kat">Profit total: $ </div>
+<div class="stat-val"></div>
+<div class="stat-kat">Profit%:</div>
+<div class="stat-val">%</div>
+<div class="stat-kat">Profit factor:</div>
+<div class="stat-val">0.00</div>
+<div class="stat-kat">RR arány:</div>
+<div class="stat-val">0.00%</div>
+<div class="stat-kat">Találati arány:</div>
+<div class="stat-val">0.00%</div>
+<div class="stat-kat">Átlag nyerő:</div>
+<div class="stat-val">$0.00</div>
+<div class="stat-kat">Átlag vesztő:</div>
+<div class="stat-val">$0.00</div>
+<div class="stat-kat">Átlag trédhossz:</div>
+<div class="stat-val">0 óra</div>
+</div>
+<div class="side-charts">
+<div id="days-chart"></div>
+<div id="hours-chart"></div>
+<div id="scatter-chart"></div>
+</div>
+<div class="main-charts">
+<div id="Hozam_chart"></div>
+<div id="Lots_chart"></div>
+</div>
+
+</div><div class="symstrat-tabla">
+<div class="tabla-head" style="background-color: #878787">
+<div class="symstat-tabla-oszlop tabla-nr">Nr</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">tól -ig</div>
+<div class="symstat-tabla-oszlop tabla-hossz">tréd hossz</div>
+<div class="symstat-tabla-oszlop tabla-xit">kilépés</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">profit $</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">profit %</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes">megjegyzés</div>
+</div>
 </div>
 </div>
  </body>

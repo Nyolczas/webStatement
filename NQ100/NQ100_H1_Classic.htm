@@ -23,16 +23,1094 @@ google.charts.setOnLoadCallback(drawHoursChart);
 google.charts.setOnLoadCallback(drawScatterChart);
 
 // ================================ /Load charts ================================
-      </script>
+ // ================================ Hozam chart ================================
+function drawHozamChart() {
+var data = google.visualization.arrayToDataTable([
+['Dátum', 'Hozam', 'Longs', 'Shorts'],
+['', 0, 0, 0]
+,
+['2018.04.16 16:34', -2.13, -2.13, 0.00],
+['2018.04.16 16:34', -4.30, -4.30, 0.00],
+['2018.04.16 21:02', -4.35, -4.35, 0.00],
+['2018.04.17 16:30', -4.42, -4.42, 0.00],
+['2018.04.18 16:31', -1.22, -1.22, 0.00],
+['2018.04.18 16:31', 2.00, 2.00, 0.00],
+['2018.04.24 19:33', 8.69, 2.00, 6.69],
+['2018.04.24 23:10', 15.74, 2.00, 13.74],
+['2018.04.25 17:08', 13.69, 2.00, 11.69],
+['2018.04.25 17:08', 11.68, 2.00, 9.68],
+['2018.05.04 16:54', 9.56, 2.00, 7.56],
+['2018.05.04 16:54', 7.38, 2.00, 5.38],
+['2018.05.07 02:25', 14.13, 8.75, 5.38],
+['2018.05.07 15:31', 21.28, 15.90, 5.38],
+['2018.05.10 17:48', 28.25, 22.87, 5.38],
+['2018.05.11 16:32', 35.49, 30.11, 5.38],
+['2018.05.14 20:02', 33.54, 28.16, 5.38],
+['2018.05.14 20:02', 31.59, 26.21, 5.38],
+['2018.05.24 04:30', 33.95, 28.57, 5.38],
+['2018.05.24 04:30', 36.28, 30.90, 5.38],
+['2018.05.29 17:32', 33.99, 28.61, 5.38],
+['2018.05.29 17:32', 31.79, 26.41, 5.38],
+['2018.05.31 10:08', 31.70, 26.32, 5.38],
+['2018.05.31 10:08', 31.61, 26.23, 5.38],
+['2018.06.01 18:38', 38.60, 33.22, 5.38],
+['2018.06.05 18:35', 52.56, 47.18, 5.38],
+['2018.06.12 21:27', 50.46, 45.08, 5.38],
+['2018.06.12 21:27', 48.32, 42.94, 5.38],
+['2018.06.19 02:35', 46.07, 40.69, 5.38],
+['2018.06.19 02:35', 43.82, 38.44, 5.38],
+['2018.06.20 21:49', 43.81, 38.43, 5.38],
+['2018.06.20 21:56', 43.72, 38.34, 5.38],
+['2018.06.25 18:39', 50.79, 38.34, 12.45],
+['2018.06.25 22:36', 58.69, 38.34, 20.35],
+['2018.06.27 22:28', 58.67, 38.34, 20.33],
+['2018.06.27 22:28', 58.64, 38.34, 20.30],
+['2018.06.28 16:30', 56.52, 38.34, 18.18],
+['2018.06.28 16:30', 54.37, 38.34, 16.03],
+['2018.07.09 03:08', 61.22, 45.19, 16.03],
+['2018.07.09 17:18', 67.49, 51.46, 16.03],
+['2018.07.25 23:01', 74.60, 58.57, 16.03],
+['2018.07.25 23:05', 78.42, 62.39, 16.03],
+['2018.07.30 20:52', 78.95, 62.39, 16.56],
+['2018.07.30 20:52', 79.70, 62.39, 17.31],
+['2018.08.06 22:00', 79.68, 62.37, 17.31],
+['2018.08.06 22:00', 79.62, 62.31, 17.31],
+['2018.08.08 18:59', 77.50, 60.19, 17.31],
+['2018.08.08 18:59', 75.38, 58.07, 17.31],
+['2018.08.08 22:00', 75.37, 58.06, 17.31],
+['2018.08.09 22:48', 75.36, 58.05, 17.31],
+['2018.08.09 22:48', 75.35, 58.04, 17.31],
+['2018.08.15 18:09', 73.11, 58.04, 15.07],
+['2018.08.15 18:09', 70.90, 58.04, 12.86],
+['2018.08.17 18:52', 70.97, 58.04, 12.93],
+['2018.08.17 18:52', 71.08, 58.04, 13.04],
+['2018.08.20 18:08', 71.07, 58.04, 13.03],
+['2018.08.21 20:15', 71.06, 58.03, 13.03],
+['2018.08.21 20:15', 71.05, 58.02, 13.03],
+['2018.08.30 16:38', 74.53, 61.50, 13.03],
+['2018.08.30 16:38', 78.09, 65.06, 13.03],
+['2018.08.30 21:18', 76.00, 62.97, 13.03],
+['2018.08.30 21:18', 73.89, 60.86, 13.03],
+['2018.09.06 20:42', 73.88, 60.86, 13.02],
+['2018.09.06 20:42', 73.87, 60.86, 13.01],
+['2018.09.06 22:02', 71.80, 60.86, 10.94],
+['2018.09.06 22:02', 69.73, 60.86, 8.87],
+['2018.09.07 16:35', 67.40, 60.86, 6.54],
+['2018.09.07 16:35', 65.29, 60.86, 4.43],
+['2018.09.10 18:09', 65.28, 60.86, 4.42],
+['2018.09.11 16:43', 63.14, 60.86, 2.28],
+['2018.09.11 16:43', 61.01, 60.86, 0.15]
+]);
+
+var options = {
+seriesType: 'bars',
+series: {
+1: {
+type: 'line'
+},
+2: {
+type: 'line'
+}
+},
+colors: ['#878787', '#0050b8', '#b80000'],
+dataOpacity: 0.5,
+bar: {groupWidth: "100%"},legend: {
+position: 'none'
+},
+chartArea: {
+left: 40,
+right: 40,
+bottom: 20,
+top: 20,
+width: "100%",
+height: "100%"
+}
+};
+
+var chart = new google.visualization.ComboChart(document.getElementById('Hozam_chart'));
+chart.draw(data, options);
+}
+// ================================ /Hozam chart ================================
+ // ================================ Lots chart ================================
+function drawLotsChart() {
+var data = google.visualization.arrayToDataTable([
+['date', 'lots'],
+['', 0]
+,
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+['', 0.10],
+]);
+
+var options = {
+seriesType: 'bars',
+colors: ['#7230A0'],
+legend: {
+position: 'none'
+},
+chartArea: {
+left: 40,
+right: 40,
+bottom: 28,
+top: 10,
+width: "100%",
+height: "100%"
+}
+};
+
+var chart = new google.visualization.ComboChart(document.getElementById('Lots_chart'));
+chart.draw(data, options);
+}
+// ================================ /Lots chart ================================
+ // ================================ Days chart ================================
+function drawDaysChart() {
+var data = google.visualization.arrayToDataTable([
+['nap', 'profit'],['hétfő', 3.40],
+['kedd', 7.07],
+['szerda', 23.78],
+['csütörtök', -12.65],
+['péntek', 39.41],
+]);
+
+var options = {
+seriesType: 'bars',
+colors: ['#7230A0'],
+legend: {
+position: 'none'
+},
+chartArea: {
+left: 40,
+right: 20,
+bottom: 20,
+top: 20,
+width: "100%",
+height: "100%"
+}
+};
+
+var chart = new google.visualization.ComboChart(document.getElementById('days-chart'));
+chart.draw(data, options);
+}
+// ================================ /Days chart ================================
+ // ================================ Hours chart ================================
+function drawHoursChart() {
+var data = google.visualization.arrayToDataTable([
+['óra', 'profit'],
+['0', 0],
+['1', 0.00],
+['2', 0.00],
+['3', 0.00],
+['4', 0.00],
+['5', 0.00],
+['6', 0.00],
+['7', 0.00],
+['8', 0.00],
+['9', 0.00],
+['10', 0.00],
+['11', 0.00],
+['12', 0.00],
+['13', 0.00],
+['14', 0.00],
+['15', 16.58],
+['16', -17.10],
+['17', 13.42],
+['18', 35.85],
+['19', 10.81],
+['20', 14.57],
+['21', -12.94],
+['22', -0.18],
+['23', 0.00],
+]);
+
+var options = {
+seriesType: 'bars',
+colors: ['#7230A0'],
+legend: {
+position: 'none'
+},
+chartArea: {
+left: 40,
+right: 20,
+bottom: 20,
+top: 20,
+width: "100%",
+height: "100%"
+}
+};
+
+var chart = new google.visualization.ComboChart(document.getElementById('hours-chart'));
+chart.draw(data, options);
+}
+// ================================ /Hours chart ================================
+
+ // ================================ Scatter chart ================================
+function drawScatterChart() {
+var data = google.visualization.arrayToDataTable([
+['age', 'profit'],
+[0, -2.13],
+[0, -2.17],
+[1, -0.05],
+[1, -0.07],
+[22, 3.20],
+[22, 3.22],
+[1, 6.69],
+[5, 7.05],
+[0, -2.05],
+[0, -2.01],
+[1, -2.12],
+[1, -2.18],
+[56, 6.75],
+[69, 7.15],
+[21, 6.97],
+[44, 7.24],
+[2, -1.95],
+[2, -1.95],
+[8, 2.36],
+[8, 2.33],
+[0, -2.29],
+[0, -2.20],
+[12, -0.09],
+[12, -0.09],
+[3, 6.99],
+[99, 13.96],
+[0, -2.10],
+[0, -2.14],
+[5, -2.25],
+[5, -2.25],
+[2, -0.01],
+[2, -0.09],
+[1, 7.07],
+[5, 7.90],
+[1, -0.02],
+[1, -0.03],
+[0, -2.12],
+[0, -2.15],
+[57, 6.85],
+[71, 6.27],
+[4, 7.11],
+[4, 3.82],
+[2, 0.53],
+[2, 0.75],
+[2, -0.02],
+[2, -0.06],
+[0, -2.12],
+[0, -2.12],
+[1, -0.01],
+[5, -0.01],
+[5, -0.01],
+[0, -2.24],
+[0, -2.21],
+[2, 0.07],
+[2, 0.11],
+[1, -0.01],
+[1, -0.01],
+[1, -0.01],
+[23, 3.48],
+[23, 3.56],
+[1, -2.09],
+[1, -2.11],
+[2, -0.01],
+[2, -0.01],
+[1, -2.07],
+[1, -2.07],
+[0, -2.33],
+[0, -2.11],
+[1, -0.01],
+[0, -2.14],
+[0, -2.13],
+]);
+
+var options = {
+colors: ['#7230A0'],
+legend: {
+position: 'none'
+},
+chartArea: {
+left: 40,
+right: 20,
+bottom: 40,
+top: 20,
+width: "100%",
+height: "100%"
+}
+};
+
+var chart = new google.visualization.ScatterChart(document.getElementById('scatter-chart'));
+
+chart.draw(data, options);
+}
+// ================================ /Scatter chart ================================
+ </script>
 </head>
 
 <body>
 
  <div class="symstrat-container">
-<div class="sym-navbar">
-<a class="sym-navitem sym-navlink symbol" class="1" href=" nq100.html">nq100</a>
-<a class="sym-navitem sym-navlink strategy" class="Classic" href="#">60 Classic</a>
-<a class="sym-navitem sym-navlink" href="../Mastrlist.html">Mesterlista</a>
+<div class="sym-navbar" style="background-color: #878787">
+<a class="sym-navitem symbol NQ100" href="NQ100.htm">NQ100</a>
+<a class="sym-navitem strategy Classic" href="#">H1 Classic</a>
+<a class="sym-navitem sym-navlink" href="../instruments.htm">Instrumentumok</a>
+<div class="sym-navitem"></div>
+<div class="sym-navitem"></div>
+<div class="sym-navitem"></div>
+<div class="sym-navitem"></div>
+<a class="sym-navitem sym-navlink" href="NQ100_H1_TSQ.htm">H1_TSQ</a>
+<a class="sym-navitem sym-navlink" href="NQ100_H1_St4.htm">H1_St4</a>
+<a class="sym-navitem sym-navlink" href="NQ100_H1_Classic.htm">H1_Classic</a>
+<a class="sym-navitem sym-navlink" href="NQ100_H1_Zoom.htm">H1_Zoom</a>
+<a class="sym-navitem sym-navlink" href="NQ100_H1_Batman.htm">H1_Batman</a>
+<a class="sym-navitem sym-navlink" href="NQ100_M15_ADX.htm">M15_ADX</a>
+</div>
+<div class="charts-container">
+<div class="stat-wrapper">
+<div class="stat-kat">Kor:</div>
+<div class="stat-val">0 nap</div>
+<div class="stat-kat">Trades:</div>
+<div class="stat-val">71 db</div>
+<div class="stat-kat">Profit total: $ </div>
+<div class="stat-val">61.01</div>
+<div class="stat-kat">Profit%:</div>
+<div class="stat-val">11.8880%</div>
+<div class="stat-kat">Profit factor:</div>
+<div class="stat-val">0.00</div>
+<div class="stat-kat">RR arány:</div>
+<div class="stat-val">0.00%</div>
+<div class="stat-kat">Találati arány:</div>
+<div class="stat-val">0.00%</div>
+<div class="stat-kat">Átlag nyerő:</div>
+<div class="stat-val">$0.00</div>
+<div class="stat-kat">Átlag vesztő:</div>
+<div class="stat-val">$0.00</div>
+<div class="stat-kat">Átlag trédhossz:</div>
+<div class="stat-val">0 óra</div>
+</div>
+<div class="side-charts">
+<div id="days-chart"></div>
+<div id="hours-chart"></div>
+<div id="scatter-chart"></div>
+</div>
+<div class="main-charts">
+<div id="Hozam_chart"></div>
+<div id="Lots_chart"></div>
+</div>
+
+</div><div class="symstrat-tabla">
+<div class="tabla-head" style="background-color: #878787">
+<div class="symstat-tabla-oszlop tabla-nr">Nr</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">tól -ig</div>
+<div class="symstat-tabla-oszlop tabla-hossz">tréd hossz</div>
+<div class="symstat-tabla-oszlop tabla-xit">kilépés</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">profit $</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">profit %</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes">megjegyzés</div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">0.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.04.16 16:00 - 2018.04.16 16:34</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.13</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.4451%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">1.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.04.16 16:00 - 2018.04.16 16:34</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.17</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.4535%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">2.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.04.16 20:00 - 2018.04.16 21:02</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.05</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0104%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">3.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.04.17 15:00 - 2018.04.17 16:30</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.07</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0147%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">4.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.04.17 18:00 - 2018.04.18 16:31</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 22 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 3.20</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">0.6739%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">5.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.04.17 18:00 - 2018.04.18 16:31</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 22 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 3.22</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">0.6781%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">6.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.04.24 18:00 - 2018.04.24 19:33</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[tp]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 6.69</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">1.3531%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">7.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.04.24 18:00 - 2018.04.24 23:10</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 5 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 7.05</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">1.4259%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">8.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.04.25 17:00 - 2018.04.25 17:08</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.05</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.4074%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">9.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.04.25 17:00 - 2018.04.25 17:08</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.01</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.3995%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">10.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.05.04 15:00 - 2018.05.04 16:54</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.12</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.3992%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">11.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.05.04 15:00 - 2018.05.04 16:54</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.18</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.4105%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">12.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.05.04 18:00 - 2018.05.07 02:25</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 56 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[tp]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 6.75</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">1.2710%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">13.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.05.04 18:00 - 2018.05.07 15:31</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 69 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 7.15</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">1.3464%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">14.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.05.09 20:00 - 2018.05.10 17:48</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 21 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[tp]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 6.97</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">1.3297%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">15.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.05.09 20:00 - 2018.05.11 16:32</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 44 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 7.24</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">1.3812%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">16.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.05.14 18:00 - 2018.05.14 20:02</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 2 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -1.95</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.3639%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">17.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.05.14 18:00 - 2018.05.14 20:02</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 2 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -1.95</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.3639%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">18.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.05.23 20:00 - 2018.05.24 04:30</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 8 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 2.36</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">0.4468%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">19.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.05.23 20:00 - 2018.05.24 04:30</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 8 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 2.33</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">0.4411%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">20.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.05.29 17:00 - 2018.05.29 17:32</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.29</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.4362%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">21.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.05.29 17:00 - 2018.05.29 17:32</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.20</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.4190%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">22.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.05.30 22:00 - 2018.05.31 10:08</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 12 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.09</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0173%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">23.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.05.30 22:00 - 2018.05.31 10:08</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 12 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.09</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0173%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">24.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.06.01 15:00 - 2018.06.01 18:38</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 3 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[tp]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 6.99</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">1.3461%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">25.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.06.01 15:00 - 2018.06.05 18:35</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 99 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 13.96</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">2.6884%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">26.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.06.12 21:00 - 2018.06.12 21:27</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.10</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.4008%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">27.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.06.12 21:00 - 2018.06.12 21:27</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.14</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.4084%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">28.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.06.18 21:00 - 2018.06.19 02:35</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 5 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.25</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.4281%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">29.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.06.18 21:00 - 2018.06.19 02:35</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 5 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.25</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.4281%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">30.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.06.20 19:00 - 2018.06.20 21:49</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 2 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.01</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0019%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">31.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.06.20 19:00 - 2018.06.20 21:56</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 2 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.09</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0172%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">32.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.06.25 17:00 - 2018.06.25 18:39</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[tp]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 7.07</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">1.3468%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">33.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.06.25 17:00 - 2018.06.25 22:36</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 5 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 7.90</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">1.5049%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">34.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.06.27 21:00 - 2018.06.27 22:28</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.02</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0037%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">35.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.06.27 21:00 - 2018.06.27 22:28</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.03</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0056%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">36.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.06.28 16:00 - 2018.06.28 16:30</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.12</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.3941%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">37.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.06.28 16:00 - 2018.06.28 16:30</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.15</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.3997%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">38.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.07.06 18:00 - 2018.07.09 03:08</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 57 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[tp]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 6.85</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">1.3162%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">39.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.07.06 18:00 - 2018.07.09 17:18</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 71 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 6.27</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">1.2048%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">40.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.07.25 19:00 - 2018.07.25 23:01</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 4 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[tp]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 7.11</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">1.2952%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">41.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.07.25 19:00 - 2018.07.25 23:05</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 4 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 3.82</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">0.6959%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">42.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.07.30 18:00 - 2018.07.30 20:52</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 2 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 0.53</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">0.0970%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">43.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.07.30 18:00 - 2018.07.30 20:52</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 2 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 0.75</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">0.1373%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">44.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.06 20:00 - 2018.08.06 22:00</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 2 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.02</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0037%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">45.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.06 20:00 - 2018.08.06 22:00</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 2 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.06</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0111%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">46.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.08 18:00 - 2018.08.08 18:59</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.12</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.3653%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">47.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.08 18:00 - 2018.08.08 18:59</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.12</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.3653%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">48.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.08 21:00 - 2018.08.08 22:00</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.01</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0017%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">49.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.09 17:00 - 2018.08.09 22:48</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 5 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.01</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0017%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">50.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.09 17:00 - 2018.08.09 22:48</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 5 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.01</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0017%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">51.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.15 18:00 - 2018.08.15 18:09</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.24</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.4051%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">52.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.15 18:00 - 2018.08.15 18:09</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.21</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.3997%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">53.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.17 16:00 - 2018.08.17 18:52</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 2 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 0.07</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">0.0131%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">54.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.17 16:00 - 2018.08.17 18:52</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 2 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 0.11</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">0.0205%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">55.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.20 17:00 - 2018.08.20 18:08</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.01</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0019%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">56.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.21 19:00 - 2018.08.21 20:15</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.01</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0019%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">57.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.21 19:00 - 2018.08.21 20:15</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.01</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0019%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">58.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.29 17:00 - 2018.08.30 16:38</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 23 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 3.48</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">0.6316%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">59.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.29 17:00 - 2018.08.30 16:38</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 23 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ 3.56</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">0.6461%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">60.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.30 20:00 - 2018.08.30 21:18</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.09</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.3759%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">61.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.08.30 20:00 - 2018.08.30 21:18</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.11</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.3795%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">62.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.09.06 18:00 - 2018.09.06 20:42</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 2 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.01</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0019%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">63.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.09.06 18:00 - 2018.09.06 20:42</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 2 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.01</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0019%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">64.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.09.06 21:00 - 2018.09.06 22:02</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.07</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.3875%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">65.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.09.06 21:00 - 2018.09.06 22:02</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.07</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.3875%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">66.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.09.07 16:00 - 2018.09.07 16:35</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.33</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.4403%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">67.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.09.07 16:00 - 2018.09.07 16:35</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.11</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.3987%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">68.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.09.10 17:00 - 2018.09.10 18:09</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 1 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -0.01</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.0019%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor elsosor">
+<div class="symstat-tabla-oszlop tabla-nr">69.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.09.11 16:00 - 2018.09.11 16:43</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_b[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.14</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.4117%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
+<div class="symstrat-tabla-sor masodiksor">
+<div class="symstat-tabla-oszlop tabla-nr">70.</div>
+<div class="symstat-tabla-oszlop tabla-tol-ig">2018.09.11 16:00 - 2018.09.11 16:43</div>
+<div class="symstat-tabla-oszlop tabla-hossz"> 0 óra</div>
+<div class="symstat-tabla-oszlop tabla-xit">_a[sl]</div>
+<div class="symstat-tabla-oszlop tabla-profit-dollar">$ -2.13</div>
+<div class="symstat-tabla-oszlop tabla-profit-percent">-0.4098%</div>
+<div class="symstat-tabla-oszlop tabla-megjegyzes"></div>
+</div>
 </div>
 </div>
  </body>

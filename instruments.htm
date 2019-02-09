@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Instrumentumok</title>
+<!-- Bootstrap core CSS -->
+<link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/minta.css">
+<link rel="stylesheet" href="css/symcolors.css">
+<link rel="stylesheet" href="css/instruments.css">
+<!-- chart scripts -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load("current", { packages: ['corechart'] });
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+["Instrument", "Hozam", { role: "style" }] ,
+["DAX30", -4.68, "color: #878787"],
+["FTSE100", -21.12, "color: #878787"],
+["NQ100", 14.69, "color: #878787"],
+["SP500", -18.50, "color: #878787"] 
+]);
+
+var view = new google.visualization.DataView(data);
+view.setColumns([0, 1,
+{
+calc: "stringify",
+sourceColumn: 1,
+type: "string",
+role: "annotation"
+},
+2]);
+
+var options = {
+bar: { groupWidth: "92%" },
+legend: { position: "none" },
+chartArea: {
+left: 40,
+right: 40,
+bottom: 20,
+top: 20,
+width: "100%",
+height: "100%"
+}
+};
+var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+chart.draw(view, options);
+}
+</script>
+</head>
+
+ <body>
+<!-- ================================ navbar  ================================ -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<a class="navbar-brand" href=C:/Users/User/Documents/Tozsde/MT4ek/XM1/MQL4/Files/webStatement/balance.htm>Admiral Robot Portfólió</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarCollapse">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a class="nav-link" href="balance.htm">Balance
+</a>
+</li>
+<li class="nav-item active">
+<a class="nav-link" href="instruments.htm">Instrumentumok</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="strategies.htm">Stratégiák</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="masterlist.htm">Mesterlista</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="statistic.htm">Statisztika</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- ================================ /navbar  ================================ -->
+ <div class="symstrat-container">
+<div class="chart-group">
+<div class="flex-container">
+<a class="instr-button DAX30" href="DAX30/DAX30.htm">DAX30</a>
+<a class="instr-button FTSE100" href="FTSE100/FTSE100.htm">FTSE100</a>
+<a class="instr-button NQ100" href="NQ100/NQ100.htm">NQ100</a>
+<a class="instr-button SP500" href="SP500/SP500.htm">SP500</a>
+</div>
+<div id="columnchart_values"></div>
+<div class="flex-container">
+<a class="instr-button DAX30" href="DAX30/DAX30.htm">DAX30</a>
+<a class="instr-button FTSE100" href="FTSE100/FTSE100.htm">FTSE100</a>
+<a class="instr-button NQ100" href="NQ100/NQ100.htm">NQ100</a>
+<a class="instr-button SP500" href="SP500/SP500.htm">SP500</a>
+</div>
+</div>
+</div>
+ </body>
+
+</html>
+

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>FTSE100</title>
+<link rel="stylesheet" href="../css/minta.css">
+<link rel="stylesheet" href="../css/sym-strategy.css">
+<link rel="stylesheet" href="../css/symcolors.css">
+ <!-- chartloaders -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- chart scripts -->
+<script type="text/javascript">
+// ================================ Load charts ================================
+google.charts.load('current', {
+'packages': ['corechart', 'table']
+});
+
+google.charts.setOnLoadCallback(drawStratsChart);
+google.charts.setOnLoadCallback(drawHozamChart);
+google.charts.setOnLoadCallback(drawLotsChart);
+// ================================ /Load charts ================================
+ // ================================ Hozam chart ================================
+function drawHozamChart() {
+var data = google.visualization.arrayToDataTable([
+['Month', 'Hozam', 'Longs', 'Shorts'],
+['', 0, 0, 0] ,
+['2018.04.12 10:26', 0.08, 0.08, 0.00],
+['2018.04.16 12:20', -4.52, 0.08, -4.60],
+['2018.04.18 10:13', -4.34, 0.26, -4.60],
+['2018.04.19 11:04', -4.18, 0.42, -4.60],
+['2018.04.24 10:16', -3.91, 0.69, -4.60],
+['2018.04.25 10:19', -3.77, 0.83, -4.60],
+['2018.04.26 10:00', -3.27, 0.83, -4.10],
+['2018.04.30 12:30', -2.98, 1.12, -4.10],
+['2018.05.01 10:26', -2.90, 1.20, -4.10],
+['2018.05.02 10:20', -2.62, 1.48, -4.10],
+['2018.05.03 10:37', -7.20, -3.10, -4.10],
+['2018.05.04 10:16', -6.72, -3.10, -3.62],
+['2018.05.09 10:24', -6.59, -2.97, -3.62],
+['2018.05.10 10:08', -4.55, -2.97, -1.58],
+['2018.05.15 13:15', -4.75, -3.17, -1.58],
+['2018.05.21 12:04', -3.64, -2.06, -1.58],
+['2018.05.22 10:59', -3.48, -1.90, -1.58],
+['2018.05.23 10:05', -13.12, -1.90, -11.22],
+['2018.05.29 10:01', -12.70, -1.90, -10.80],
+['2018.05.30 12:56', -12.64, -1.84, -10.80],
+['2018.06.01 10:00', -12.26, -1.46, -10.80],
+['2018.06.04 10:01', -12.38, -1.58, -10.80],
+['2018.06.05 11:48', -11.47, -1.58, -9.89],
+['2018.06.06 10:01', -21.12, -11.23, -9.89]
+]);
+ var options={
+seriesType: 'bars',
+series: 
+{
+
+ 1: 
+{
+
+type: 'line'
+},
+2: {
+type: 'line'
+}
+},
+colors:['#878787','#0050b8','#b80000'],
+dataOpacity: 0.5,
+legend: {
+position: 'none'
+},
+bar: {groupWidth: "100%"},chartArea: {
+left: 60,
+right: 30,
+bottom: 40,
+top: 20,
+width: "100%",
+height: "100%"
+}
+};
+var chart = new google.visualization.ComboChart(document.getElementById('Sym-hozam_chart'));
+chart.draw(data, options);
+}
+// ================================ /Hozam chart ================================
+ // ================================ Lots chart ================================
+function drawLotsChart() {
+var data = google.visualization.arrayToDataTable([
+ ['date', 'lots'],
+[' ', 0.30],
+[' ', 0.30],
+[' ', 0.30],
+[' ', 0.30],
+[' ', 0.30],
+[' ', 0.60],
+[' ', 0.30],
+[' ', 0.30],
+[' ', 0.30],
+[' ', 0.30],
+[' ', 0.30],
+[' ', 0.30],
+[' ', 0.30],
+[' ', 0.70],
+[' ', 0.70],
+[' ', 0.70],
+[' ', 0.70],
+[' ', 0.70],
+[' ', 0.70],
+[' ', 0.30],
+[' ', 0.30],
+[' ', 0.30],
+[' ', 0.40],
+[' ', 0.70],
+ ]);
+
+var options = {
+seriesType: 'bars',
+colors: ['#878787'],
+legend: {
+position: 'none'
+},
+chartArea: {
+left: 60,
+right: 30,
+bottom: 28,
+top: 10,
+width: "100%",
+height: "100%"
+}
+};
+
+var chart = new google.visualization.ComboChart(document.getElementById('Sym-lots_chart'));
+chart.draw(data, options);
+}
+// ================================ /Lots chart ================================
+ // ================================ Strats charts ================================
+function drawStratsChart() {
+var data = google.visualization.arrayToDataTable([
+ ['Month', 'Hozam'] 
+['', '0'] 
+ ]);
+
+ var options = {
+seriesType: 'bars',
+series: {
+},
+ legend: {
+position: 'none'
+},
+chartArea: {
+left: 60,
+right: 30,
+bottom: 40,
+top: 20,
+width: "100%",
+height: "100%"
+}
+};
+
+var chart = new google.visualization.ComboChart(document.getElementById('Strats_chart'));
+chart.draw(data, options);
+}
+// ================================ /Strats charts ================================
+</script>
+</head>
+
+ <body>
+<div class="symstrat-container">
+<!-- ================================ navbar ================================ -->
+<div class="navbar"  style="background-color: #878787">
+<a class="sym-navitem symbol symbol-main FTSE100" href="../instruments.htm">FTSE100</a>
+<a class="sym-navitem sym-navlink" href="../Instruments.htm">Instrumentumok</a>
+<a class="sym-navitem sym-navlink" href="../Mastrlist.htm">Mesterlista</a>
+<div class="sym-navitem"></div>
+<div class="sym-navitem"></div>
+<div class="sym-navitem"></div>
+<div class="sym-navitem"></div>
+<div class="sym-navitem"></div>
+<div class="sym-navitem"></div>
+<div class="sym-navitem"></div>
+<div class="sym-navitem"></div>
+<div class="sym-navitem"></div>
+<a class="sym-navitem sym-navlink" href="FTSE100_H1_Batman.htm">H1_Batman</a>
+</div>
+<!-- ================================ /navbar ================================ -->
+ <!-- ================================ strats chart ================================ -->
+<div class="chart-wrapper">
+<div class="stat-wrapper">
+<div class="maestro FTSE100">Maestro</div>
+<div class="stat-kat">Profit total:</div>
+<div class="stat-val">$52</div>
+<div class="stat-kat">Profit%:</div>
+<div class="stat-val">12%</div>
+<div class="stat-kat">Profit factor:</div>
+<div class="stat-val">1.95</div>
+<div class="stat-kat">RR arány:</div>
+<div class="stat-val">180%</div>
+<div class="stat-kat">Találati arány:</div>
+<div class="stat-val">70%</div>
+</div>
+<div class="maestro-charts">
+<div id="Sym-hozam_chart"></div>
+<div id="Sym-lots_chart"></div>
+</div>
+
+</div>
+<div class="chart-wrapper" id="strats-wrapper">
+<div class="stat-wrapper">
+<div class="stat-kat">M5_ADX:</div>
+<div class="stat-val">$52</div>
+<div class="stat-kat">M15_Zoom:</div>
+<div class="stat-val">$52</div>
+<div class="stat-kat">H1_St4:</div>
+<div class="stat-val">$52</div>
+<div class="stat-kat">H1_TSQ:</div>
+<div class="stat-val">$52</div>
+</div>
+<div class="maestro-charts">
+<div id="Strats_chart"></div>
+</div>
+
+</div>
+<!-- ================================ /strats chart ================================ -->
+ </div>
+
+</body>
+
+</html>

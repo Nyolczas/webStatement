@@ -1,1 +1,2 @@
-OpenTime;Type;Size;OpenPrice;CloseTime;ClosePrice;Profit;Komment;Profit%
+OpenTime;Type;Size;OpenPrice;CloseTime;ClosePrice;Profit;Komment;Profit%;Update
+2018.02.28 17:00;buy;0.10;6953.48;2018.02.28 18:12;6906.77;-4.67;_1[sl];-1.11%;
